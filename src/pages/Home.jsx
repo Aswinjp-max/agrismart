@@ -1,37 +1,76 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   ArrowRight, Leaf, ShieldCheck, Users, ShoppingCart, 
-  Wrench, Landmark, MessageSquare, CloudSun, Wind, 
-  Droplets, MapPin, RefreshCcw, AlertTriangle, Lightbulb 
+  Wrench, Landmark, MessageSquare, RefreshCcw, 
+  AlertTriangle, Lightbulb, MapPin, Droplets, Wind,
+  Loader2
 } from 'lucide-react';
 
 export default function Home({ lang }) {
   const [weather, setWeather] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [locationStatus, setLocationStatus] = useState("detecting"); // detecting, found, denied
   const isEn = lang === 'en';
 
-  // --- CONFIGURATION ---
-  // Replace with your actual OpenWeatherMap API Key
   const API_KEY = "7598c67d3e012b4c247bfc87d04e4841"; 
-  const CITY = "Kochi"; 
 
-  useEffect(() => {
-    const fetchWeather = async () => {
+  // --- WEATHER & LOCATION LOGIC ---
+  const initWeather = useCallback(() => {
+    setLoading(true);
+    setLocationStatus("detecting");
+
+    const fetchByCoords = async (lat, lon) => {
       try {
         const res = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&units=metric&appid=${API_KEY}`
+          `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`
         );
         const data = await res.json();
-        if (data.cod === 200) setWeather(data);
-        setLoading(false);
-      } catch (error) {
-        console.error("Weather failed:", error);
+        if (data.cod === 200) {
+          setWeather(data);
+          setLocationStatus("found");
+        }
+      } catch (err) {
+        console.error("Weather fetch error:", err);
+      } finally {
         setLoading(false);
       }
     };
-    fetchWeather();
+
+    const fetchByFallback = async () => {
+      try {
+        const res = await fetch(
+          `https://api.openweathermap.org/data/2.5/weather?q=Kochi&units=metric&appid=${API_KEY}`
+        );
+        const data = await res.json();
+        if (data.cod === 200) {
+          setWeather(data);
+          setLocationStatus("denied");
+        }
+      } catch (err) {
+        console.error("Fallback error:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => fetchByCoords(pos.coords.latitude, pos.coords.longitude),
+        (err) => {
+          console.warn("Location permission denied");
+          fetchByFallback();
+        },
+        { enableHighAccuracy: true, timeout: 8000 }
+      );
+    } else {
+      fetchByFallback();
+    }
   }, [API_KEY]);
+
+  useEffect(() => {
+    initWeather();
+  }, [initWeather]);
 
   // --- SMART ADVISORY LOGIC ---
   const getFarmingTip = () => {
@@ -41,22 +80,22 @@ export default function Home({ lang }) {
 
     if (condition.includes('rain')) {
       return {
-        en: "Rain detected. Delay pesticide spraying and check drainage in banana and tuber plots.",
-        ml: "മഴയ്ക്ക് സാധ്യത. കീടനാശിനി പ്രയോഗം ഒഴിവാക്കുക, തോട്ടങ്ങളിൽ വെള്ളക്കെട്ട് ഇല്ലെന്ന് ഉറപ്പാക്കുക.",
+        en: "Rain detected. Delay pesticide spraying and check drainage in plots.",
+        ml: "മഴയ്ക്ക് സാധ്യത. കീടനാശിനി പ്രയോഗം ഒഴിവാക്കുക, വെള്ളക്കെട്ട് പരിശോധിക്കുക.",
         icon: <AlertTriangle className="text-orange-400" />,
         color: "bg-blue-950 border-blue-800"
       };
     } else if (temp > 32) {
       return {
-        en: "High heat! Ensure mulching for young saplings and irrigate during early morning or late evening.",
-        ml: "കഠിനമായ ചൂട്! തൈകൾക്ക് പുതയിടുക, നനയ്ക്കുന്നത് അതിരാവിലെയോ വൈകുന്നേരമോ ആക്കുക.",
+        en: "High heat! Irrigate during early morning or late evening.",
+        ml: "കഠിനമായ ചൂട്! നനയ്ക്കുന്നത് അതിരാവിലെയോ വൈകുന്നേരമോ ആക്കുക.",
         icon: <Droplets className="text-blue-400" />,
         color: "bg-orange-950 border-orange-800"
       };
     } else {
       return {
-        en: "Favorable conditions. Good time for organic manuring and weeding in coconut groves.",
-        ml: "അനുകൂല കാലാവസ്ഥ. തെങ്ങിൻ തോട്ടങ്ങളിൽ വളമിടാനും കള നീക്കം ചെയ്യാനും അനുയോജ്യമായ സമയം.",
+        en: "Favorable conditions. Good time for organic manuring and weeding.",
+        ml: "അനുകൂല കാലാവസ്ഥ. വളമിടാനും കള നീക്കം ചെയ്യാനും അനുയോജ്യമായ സമയം.",
         icon: <Lightbulb className="text-yellow-400" />,
         color: "bg-emerald-950 border-emerald-800"
       };
@@ -79,37 +118,58 @@ export default function Home({ lang }) {
             </div>
             
             <h1 className="text-5xl md:text-7xl font-black leading-[1.1] text-emerald-950 mb-8 tracking-tighter">
-              {isEn ? "Grow More," : "Grow More,"} <br />
-              <span className="text-emerald-600">{isEn ? "Grow Better" :"Grow Better"}.</span>
+              {isEn ? "Grow More," : "കൂടുതൽ വളർത്തുക,"} <br />
+              <span className="text-emerald-600">{isEn ? "Grow Better" :"മികച്ച രീതിയിൽ"}.</span>
             </h1>
 
             {/* LIVE WEATHER & TIP CARD */}
             <div className="flex flex-col gap-4 max-w-md mb-8">
-              {/* Weather Mini-Card */}
-              <div className="bg-white/80 backdrop-blur-md p-6 rounded-[2rem] border border-stone-200 shadow-xl">
+              <div className="bg-white/80 backdrop-blur-md p-6 rounded-[2.5rem] border border-stone-200 shadow-xl relative">
+                
+                {/* Refresh Button */}
+                <button 
+                  onClick={initWeather}
+                  disabled={loading}
+                  className="absolute top-4 right-4 p-2 bg-emerald-50 text-emerald-600 rounded-full hover:bg-emerald-100 transition-all disabled:opacity-50"
+                >
+                  <RefreshCcw size={16} className={loading ? "animate-spin" : ""} />
+                </button>
+
                 {loading ? (
-                   <div className="flex items-center gap-2 font-bold text-stone-400 animate-pulse"><RefreshCcw className="animate-spin"/> Syncing Weather...</div>
-                ) : weather ? (
+                   <div className="flex items-center gap-3 py-4 font-black text-stone-400">
+                     <Loader2 className="animate-spin text-emerald-500" size={24}/> 
+                     <div className="text-xs uppercase tracking-widest">
+                        {isEn ? "Detecting Location..." : "ലൊക്കേഷൻ കണ്ടെത്തുന്നു..."}
+                     </div>
+                   </div>
+                ) : (
                   <div className="flex justify-between items-center">
                     <div>
-                      <p className="flex items-center gap-1 text-[10px] font-black text-stone-400 uppercase tracking-widest"><MapPin size={12}/> {weather.name}</p>
-                      <h2 className="text-4xl font-black text-emerald-900 mt-1">{Math.round(weather.main.temp)}°C</h2>
+                      <p className="flex items-center gap-1 text-[10px] font-black text-stone-400 uppercase tracking-widest mb-1">
+                        <MapPin size={12} className="text-emerald-600"/> 
+                        {weather?.name} {locationStatus === "denied" && <span className="text-red-400 ml-1">(Fixed)</span>}
+                      </p>
+                      <h2 className="text-5xl font-black text-emerald-950">{Math.round(weather?.main?.temp)}°C</h2>
+                      <p className="text-[10px] font-bold text-emerald-600 mt-1 uppercase tracking-widest">
+                        {weather?.weather[0].description}
+                      </p>
                     </div>
-                    <div className="text-right">
-                      <img src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} className="w-16 h-16" alt="weather icon" />
-                      <p className="text-xs font-bold text-stone-500 capitalize">{weather.weather[0].description}</p>
-                    </div>
+                    <img 
+                      src={`https://openweathermap.org/img/wn/${weather?.weather[0].icon}@4x.png`} 
+                      className="w-24 h-24 -mr-4" 
+                      alt="weather" 
+                    />
                   </div>
-                ) : <p>Weather Offline</p>}
+                )}
               </div>
 
               {/* Dynamic Advisory Card */}
-              {tip && (
-                <div className={`p-6 rounded-[2rem] border-2 shadow-2xl text-white transition-all ${tip.color}`}>
+              {tip && !loading && (
+                <div className={`p-6 rounded-[2.5rem] border-2 shadow-2xl text-white transition-all ${tip.color}`}>
                   <div className="flex items-center gap-2 mb-3">
                     {tip.icon}
                     <span className="text-[10px] font-black uppercase tracking-widest opacity-70">
-                      {isEn ? "Farmer Advisory" : "കർഷക നിർദ്ദേശം"}
+                      {isEn ? "Live Advisory" : "തത്സമയ നിർദ്ദേശം"}
                     </span>
                   </div>
                   <p className="text-lg font-bold leading-tight">{isEn ? tip.en : tip.ml}</p>
@@ -124,17 +184,17 @@ export default function Home({ lang }) {
             </div>
           </div>
 
-          {/* Visual Grid */}
+          {/* Visual Grid Images */}
           <div className="hidden lg:grid grid-cols-2 gap-4">
              <div className="space-y-4 pt-12">
                 <img src="https://images.unsplash.com/photo-1595113316349-9fa4eb24f884?auto=format&fit=crop&q=80&w=400" className="h-64 w-full object-cover rounded-[3rem] shadow-2xl" alt="Rice Field" />
-                <div className="bg-orange-400 h-40 rounded-[2.5rem] p-8 flex flex-col justify-end text-white">
+                <div className="bg-orange-400 h-40 rounded-[2.5rem] p-8 flex flex-col justify-end text-white shadow-xl">
                   <span className="text-4xl font-black">100%</span>
                   <p className="font-bold text-sm uppercase">Verified Sellers</p>
                 </div>
              </div>
              <div className="space-y-4">
-                <div className="bg-emerald-500 h-40 rounded-[2.5rem] p-8 flex flex-col justify-end text-white">
+                <div className="bg-emerald-500 h-40 rounded-[2.5rem] p-8 flex flex-col justify-end text-white shadow-xl">
                   <span className="text-4xl font-black">24/7</span>
                   <p className="font-bold text-sm uppercase">Expert Support</p>
                 </div>
