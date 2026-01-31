@@ -13,7 +13,7 @@ export default function Home({ lang }) {
 
   // --- CONFIGURATION ---
   // Replace with your actual OpenWeatherMap API Key
-  const API_KEY = "YOUR_OPENWEATHER_API_KEY"; 
+  const API_KEY = "7598c67d3e012b4c247bfc87d04e4841"; 
   const CITY = "Kochi"; 
 
   useEffect(() => {
