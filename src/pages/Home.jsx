@@ -4,7 +4,7 @@ import {
   ArrowRight, Leaf, ShieldCheck, Users, ShoppingCart, 
   Wrench, Landmark, MessageSquare, RefreshCcw, 
   AlertTriangle, Lightbulb, MapPin, Droplets, Wind,
-  Loader2
+  Loader2,Snowflake
 } from 'lucide-react';
 
 export default function Home({ lang }) {
@@ -92,7 +92,15 @@ export default function Home({ lang }) {
         icon: <Droplets className="text-blue-400" />,
         color: "bg-orange-950 border-orange-800"
       };
-    } else {
+    } 
+    else if (temp < 25) {
+      return {
+        en: "Cool weather! Ideal for planting and transplanting.",
+        ml: "അതിന്റെ ചൂട്! വളര്‍ത്താനും പ്രത്യേകമായി വളര്‍ത്താനും അനുയോജ്യമായ കാലം.",
+        icon: <Snowflake className="text-blue-400" />,
+        color: "bg-blue-950 border-blue-800"
+      };
+    }else {
       return {
         en: "Favorable conditions. Good time for organic manuring and weeding.",
         ml: "അനുകൂല കാലാവസ്ഥ. വളമിടാനും കള നീക്കം ചെയ്യാനും അനുയോജ്യമായ സമയം.",
@@ -185,22 +193,29 @@ export default function Home({ lang }) {
           </div>
 
           {/* Visual Grid Images */}
-          <div className="hidden lg:grid grid-cols-2 gap-4">
-             <div className="space-y-4 pt-12">
-                <img src="https://images.unsplash.com/photo-1595113316349-9fa4eb24f884?auto=format&fit=crop&q=80&w=400" className="h-64 w-full object-cover rounded-[3rem] shadow-2xl" alt="Rice Field" />
-                <div className="bg-orange-400 h-40 rounded-[2.5rem] p-8 flex flex-col justify-end text-white shadow-xl">
-                  <span className="text-4xl font-black">100%</span>
-                  <p className="font-bold text-sm uppercase">Verified Sellers</p>
-                </div>
-             </div>
-             <div className="space-y-4">
-                <div className="bg-emerald-500 h-40 rounded-[2.5rem] p-8 flex flex-col justify-end text-white shadow-xl">
-                  <span className="text-4xl font-black">24/7</span>
-                  <p className="font-bold text-sm uppercase">Expert Support</p>
-                </div>
-                <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&q=80&w=400" className="h-64 w-full object-cover rounded-[3rem] shadow-2xl" alt="Vegetables" />
-             </div>
-          </div>
+          {/* Visual Grid Images - ENLARGED VERSION */}
+{/* --- FULL WIDTH AUTO-ADJUSTING VIDEO --- */}
+<div className="w-full mt-12 lg:mt-0 px-0 md:px-4">
+  <div className="max-w-6xl mx-auto"> 
+    <div className="relative w-full aspect-video rounded-[2rem] lg:rounded-[4rem] overflow-hidden shadow-2xl border border-stone-200">
+      <video 
+        src="https://res.cloudinary.com/dwsdx3ywt/video/upload/v1770750727/videoplayback_1_xmurcs.mp4" 
+        autoPlay 
+        muted 
+        loop 
+        playsInline
+        className="w-full h-full object-cover" 
+      />
+      
+      {/* Optional: Subtle branding overlay since cards are gone */}
+      <div className="absolute bottom-6 left-6 lg:bottom-1 lg:left-10 bg-white/20 backdrop-blur-md px-6 py-2 rounded-full">
+         <p className="text-white font-bold text-sm lg:text-base uppercase tracking-widest">
+           {isEn ? "Place your ads now" : "ഇപ്പോൾ നിങ്ങളുടെ പരസ്യങ്ങൾ ഇടുക"}
+         </p>
+      </div>
+    </div>
+  </div>
+</div>
         </div>
       </section>
 
