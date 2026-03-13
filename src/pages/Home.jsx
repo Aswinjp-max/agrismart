@@ -199,7 +199,7 @@ export default function Home({ lang }) {
   <div className="max-w-6xl mx-auto"> 
     <div className="relative w-full aspect-video rounded-[2rem] lg:rounded-[4rem] overflow-hidden shadow-2xl border border-stone-200">
       <video 
-        src="https://res.cloudinary.com/dwsdx3ywt/video/upload/v1770750727/videoplayback_1_xmurcs.mp4" 
+        src="https://res.cloudinary.com/dotzrdmve/video/upload/v1773427933/Screen_Recording_2025-10-25_161030_ijw6iz.mp4" 
         autoPlay 
         muted 
         loop 
