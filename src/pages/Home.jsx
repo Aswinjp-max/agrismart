@@ -127,7 +127,7 @@ export default function Home({ lang }) {
             
             <h1 className="text-5xl md:text-7xl font-black leading-[1.1] text-emerald-950 mb-8 tracking-tighter">
               {isEn ? "Grow More," : "കൂടുതൽ വളർത്തുക,"} <br />
-              <span className="text-emerald-600">{isEn ? "Grow Better" :"മികച്ച രീതിയിൽ"}.</span>
+              <span className="text-emerald-600">{isEn ? "Gro Better" :"മികച്ച രീതിയിൽ"}.</span>
             </h1>
 
             {/* LIVE WEATHER & TIP CARD */}
