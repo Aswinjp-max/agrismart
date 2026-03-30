@@ -237,10 +237,7 @@ export default function Home({ lang }) {
     <div className="lg:col-span-4 lg:sticky lg:top-10">
       <div className="bg-[#E8F5E9] p-8 rounded-[3rem] shadow-xl border border-emerald-100 relative overflow-hidden">
         
-        {/* Subtle Background Quote Icon */}
-        <div className="absolute top-6 left-6 opacity-10 pointer-events-none">
-          <MessageSquare size={60} className="text-emerald-900" />
-        </div>
+        
 
         <div className="relative z-10">
           {/* Farmer Image from Reference */}
