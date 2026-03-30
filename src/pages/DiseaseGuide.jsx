@@ -12,33 +12,36 @@ const CROP_DATABASE = [
     nameEn: "Rice / Paddy",
     nameMl: "നെല്ല്",
     scientific: "Oryza sativa",
-    image: "https://images.unsplash.com/photo-1536633100350-93a95612c01d?auto=format&fit=crop&q=80&w=800",
-    details: {
-      temp: "20°C – 35°C",
-      water: "2–5 cm standing water",
-      seasons: "Virippu, Mundakan, Puncha",
-      harvest: "100–135 days"
-    },
+    image: "https://i.pinimg.com/736x/05/d2/bb/05d2bb98ade867c6564c9b011c589e6a.jpg",
+    details: { temp: "20°C – 35°C", water: "Standing water", seasons: "Virippu, Mundakan", harvest: "100–135 days" },
     threats: [
       {
         nameEn: "Blast Disease", nameMl: "കുലവാട്ടം", type: "Fungal", severity: "High",
-        symptomsEn: "Diamond-shaped spots with grey centers; neck of panicle may break; empty grains.",
-        remedyEn: "Avoid excess nitrogen; use resistant varieties; spray Tricyclazole."
+        symptomsEn: "Diamond-shaped spots with grey centers; neck of panicle may break; empty grains.", 
+        symptomsMl: "സുഡ്ഡിലുള്ള കുലവാട്ടം; പാനിക്കിലുള്ള നെറ്റ് തകര്‍ത്തല്‍; വായുവിന്റെ കുഴപ്പങ്ങള്‍.",
+        remedyEn: "Avoid excess nitrogen; use resistant varieties; spray Tricyclazole or Carbendazim." ,
+        remedyMl: "അമിതമായ നൈട്രജൻ ഒഴിവാക്കുക; തീർച്ചയായ വരിയുകൾ; Tricyclazole അല്ലെങ്കിൽ Carbendazim സ്പ്രേയ്.",
       },
       {
         nameEn: "Sheath Blight", nameMl: "ഇലക്കരിച്ചിൽ", type: "Fungal", severity: "Medium",
-        symptomsEn: "Brown patches on lower leaf sheath spreading upward; plants may fall.",
-        remedyEn: "Proper spacing; remove infected stubbles; spray Validamycin."
+        symptomsEn: "Brown patches on lower leaf sheath spreading upward; plants may fall.", 
+        symptomsMl: "ബ്രൗൺ പാച്ചുകൾ; താഴെയുള്ള ഇലവിന്റെ ഷീത് വരുന്നത്; ഉപരിതലം കടലായിരിക്കുന്നത്.",
+        remedyEn: "Proper spacing; remove infected stubbles; spray Validamycin or Hexaconazole." ,
+        remedyMl: "സമയോചിതമായ ഇടവേള; ബാധിത സ്റ്റബ്ബിളുകൾ നീക്കം ചെയ്യുക; Validamycin അല്ലെങ്കിൽ Hexaconazole സ്പ്രേയ്."
       },
       {
         nameEn: "Bacterial Leaf Blight", nameMl: "ബാക്ടീരിയൽ ഇലവാട്ടം", type: "Bacterial", severity: "High",
-        symptomsEn: "Leaf tips turn yellow and dry downward; milky liquid in water test.",
-        remedyEn: "Use resistant seeds; avoid excess nitrogen; spray Streptocycline."
+        symptomsEn: "Leaf tips turn yellow and dry downward.", 
+        symptomsMl: "ഇലവിന്റെ തലയിൽ മുത്തിരിക്കുന്നത്; കുഴപ്പങ്ങള്‍.",
+        remedyEn: "Use resistant seeds; avoid excess nitrogen; spray Streptocycline + Copper oxychloride." ,
+        remedyMl: "തീർച്ചയായ വരിയുകൾ; അമിതമായ നൈട്രജൻ ഒഴിവാക്കുക; Streptocycline + Copper oxychloride സ്പ്രേയ്."
       },
       {
-        nameEn: "Stem Borer", nameMl: "തണ്ട് തുരപ്പൻ", type: "Pest", severity: "High",
-        symptomsEn: "Middle leaf dries (dead heart); white empty panicles at flowering.",
-        remedyEn: "Install pheromone traps; release Trichogramma; granular insecticide."
+        nameEn: "Rice Tungro Disease", nameMl: "തുംഗ്രോ രോഗം", type: "Viral", severity: "High",
+        symptomsEn: "Leaves turn orange-yellow; plants become short; poor grain formation.", 
+        symptomsMl: "ഇലവികൾ ഓറഞ്ച്-പച്ചകൾ ആയിരിക്കുന്നത്; ഉപരിതലം കടലായിരിക്കുന്നത്; വായുവിന്റെ കുഴപ്പങ്ങള്‍.",
+        remedyEn: "Remove infected plants; control leafhopper (insecticide); early planting." ,
+        remedyMl: "ബാധിത ഉപച്ചുകൾ നീക്കം ചെയ്യുക; leafhopper (insecticide) നിയന്ത്രിക്കുക; പ്രധാനമായ വളർച്ച." 
       }
     ]
   },
@@ -47,28 +50,39 @@ const CROP_DATABASE = [
     nameEn: "Maize (Corn)",
     nameMl: "ചോളം",
     scientific: "Zea mays",
-    image: "https://images.unsplash.com/photo-1551731359-2b34fc5d0d26?auto=format&fit=crop&q=80&w=800",
-    details: {
-      temp: "18°C – 32°C",
-      water: "Moderate water; NO stagnation",
-      seasons: "Kharif, Rabi",
-      harvest: "90–110 days"
-    },
+    image: "https://i.pinimg.com/736x/d3/60/13/d36013ae30b23f13fb142f17c3ccd8c3.jpg",
+    details: { temp: "18°C – 32°C", water: "No stagnation", seasons: "Kharif, Rabi", harvest: "90–110 days" },
     threats: [
       {
         nameEn: "Turcicum Leaf Blight", nameMl: "ടർസിക്കം ഇലവാട്ടം", type: "Fungal", severity: "Medium",
         symptomsEn: "Long brown patches on leaves; drying from bottom upward.",
-        remedyEn: "Avoid overcrowding; remove infected leaves; spray Mancozeb."
+        symptomsMl: "ഇലവികൾ നീളം ബ്രൗൺ പാച്ചുകൾ; താഴെയുള്ളത് നിറഞ്ഞത്.",
+        remedyEn: "Avoid overcrowding; remove infected leaves; spray Mancozeb." ,
+        remedyMl: "അവധിയില്ലാത്ത ഇടവേള; ബാധിത ഇലവികൾ നീക്കം ചെയ്യുക; Mancozeb സ്പ്രേയ്."
+
       },
       {
-        nameEn: "Fall Armyworm", nameMl: "ഫോൾ ആർമി വേം", type: "Pest", severity: "High",
-        symptomsEn: "Big holes in leaves; sawdust-like powder inside leaf whorl.",
-        remedyEn: "Check every 3-4 days; pheromone traps; spray Spinosad."
+        nameEn: "Maydis Leaf Blight", nameMl: "മെയ്ഡിസ് ഇലവാട്ടം", type: "Fungal", severity: "Medium",
+        symptomsEn: "Small brown spots; spots join together and dry leaf.", 
+        symptomsMl: "ചെറിയ ബ്രൗൺ പാച്ചുകൾ; പാച്ചുകൾ കൂടിയാല്‍ ഇലവി ശ്വസനം കുറവാകുന്നത്.",
+        remedyEn: "Crop rotation; field sanitation; spray Carbendazim or Mancozeb." ,
+        remedyMl: "ക്രോപ് റോട്ടേഷൻ; ഫീൽڈ് സാനിറ്റേഷൻ; Carbendazim അല്ലെങ്കിൽ Mancozeb സ്പ്രേയ്."
       },
       {
         nameEn: "Bacterial Stalk Rot", nameMl: "ബാക്ടീരിയൽ തണ്ട് ചീയൽ", type: "Bacterial", severity: "High",
-        symptomsEn: "Lower stem becomes soft; bad smell; plant falls down.",
-        remedyEn: "Improve drainage; avoid water stagnation; balanced fertilizer."
+        symptomsEn: "Lower stem becomes soft; bad smell; plant falls down.", 
+        symptomsMl: "താഴെയുള്ള തണ്ട് മൃദുവാകുന്നത്; കുഴപ്പങ്ങള്‍; ഉപരിതലം കടലായിരിക്കുന്നത്.",
+        remedyEn: "Avoid water stagnation; improve drainage; do not overuse urea." ,
+        remedyMl: "വെള്ളം നിലനിർത്തൽ ഒഴിവാക്കുക; ഡ്രൈനേജ് മെച്ചപ്പെടുത്തുക; urea വിപരീതമായി ഉപയോഗിക്കരുത്."
+
+      },
+      {
+        nameEn: "Maize Mosaic Virus", nameMl: "മെയ്സ് മൊസൈക്", type: "Viral", severity: "Medium",
+        symptomsEn: "Yellow stripe pattern on leaves; stunted growth; poor cob formation.",         
+        symptomsMl: "ഇലവികൾ മഞ്ഞ ട്രൈപ്പ് പാറ്റേൺ; കുറച്ച് വളർച്ച; കുറച്ച് കോബ് രൂപകൽപ്പന.",         
+        remedyEn: "Remove infected plants early; control aphids with Neem oil spray." ,
+        remedyMl: "ബാധിത ഉപച്ചുകൾ നീക്കം ചെയ്യുക; aphids (Neem oil) നിയന്ത്രിക്കുക;"
+
       }
     ]
   },
@@ -77,23 +91,22 @@ const CROP_DATABASE = [
     nameEn: "Ragi",
     nameMl: "റാഗി",
     scientific: "Eleusine coracana",
-    image: "https://images.unsplash.com/photo-1509475826633-fed5bb1930e7?auto=format&fit=crop&q=80&w=800",
-    details: {
-      temp: "20°C – 30°C",
-      water: "Tolerates low rainfall",
-      seasons: "May-Jun, Sep",
-      harvest: "100–120 days"
-    },
+    image: "https://i.pinimg.com/1200x/c3/de/7e/c3de7e3d7045b8297329b3b993fdb3a4.jpg",
+    details: { temp: "20°C – 30°C", water: "Drought tolerant", seasons: "May-Jun", harvest: "100–120 days" },
     threats: [
       {
         nameEn: "Blast Disease", nameMl: "ബ്ലാസ്റ്റ് രോഗം", type: "Fungal", severity: "High",
-        symptomsEn: "Small brown/grey spots on leaves; neck blast causes ear head to dry.",
-        remedyEn: "Early sowing; seed treatment with Carbendazim; avoid excess nitrogen."
+        symptomsEn: "Small grey spots; neck blast causes ear head to dry; poor grain filling.", 
+        symptomsMl: "ചെറിയ ഗ്രേ പാച്ചുകൾ; നെക്ക് ബ്ലാസ്റ്റ് കോബ് തളർന്നത്; കുറച്ച് ഗ്രേണ്‍ നിറവ്.",
+        remedyEn: "Early sowing; avoid excess nitrogen; seed treatment/spray with Carbendazim." ,
+        remedyMl: "പ്രധാനമായ വളർച്ച; അമിതമായ നൈട്രജൻ ഒഴിവാക്കുക; Carbendazim ഉപയോഗിച്ച് സീഡ് ട്രെറ്റ്മെന്‍റ്/സ്പ്രേയ്."
       },
       {
-        nameEn: "Shoot Fly", nameMl: "ശൂട്ട് ഫ്ലൈ", type: "Pest", severity: "Medium",
-        symptomsEn: "Central shoot dries (dead heart); reduced tillers.",
-        remedyEn: "Early sowing; proper spacing; Neem oil spray."
+        nameEn: "Leaf Spot", nameMl: "ഇലപ്പുള്ളി രോഗം", type: "Fungal", severity: "Medium",
+        symptomsEn: "Round brown spots; leaves dry slowly.", 
+        symptomsMl: "വട്ടം ബ്രൗൺ പാച്ചുകൾ; ഇലവികൾ നിലവിൽ കുറച്ച് ശ്വസനം.",
+        remedyEn: "Field sanitation; crop rotation; spray Mancozeb." ,
+        remedyMl: "ഫീൽڈ് സാനിറ്റേഷൻ; ക്രോപ് റോട്ടേഷൻ; Mancozeb സ്പ്രേയ്."
       }
     ]
   },
@@ -102,23 +115,70 @@ const CROP_DATABASE = [
     nameEn: "Coconut",
     nameMl: "തെങ്ങ്",
     scientific: "Cocos nucifera",
-    image: "https://images.unsplash.com/photo-1590779033100-9f60705a2f3b?auto=format&fit=crop&q=80&w=800",
-    details: {
-      temp: "20°C – 35°C",
-      water: "Well-drained sandy loam",
-      care: "Clean crown regularly",
-      harvest: "Bearing starts 5-7 years"
-    },
+    image: "https://i.pinimg.com/1200x/46/30/a6/4630a6bc0fedcb08241db32604cbf7b0.jpg",
+    details: { care: "Clean crown regularly", drainage: "Well-drained soil", yield: "High with manure" },
     threats: [
       {
         nameEn: "Bud Rot", nameMl: "കൂമ്പ് ചീയൽ", type: "Fungal", severity: "High",
-        symptomsEn: "Central spindle leaf turns yellow; crown rots with bad smell.",
-        remedyEn: "Remove affected tissue; apply Bordeaux paste; Copper fungicide."
+        symptomsEn: "Central spindle leaf turns yellow; crown rots with bad smell.", 
+        symptomsMl: "മധ്യം സ്പൈണ്ട് ഇലവി മഞ്ഞാകുന്നത്; ക്രൌൺ കുഴപ്പങ്ങള്‍.",
+        remedyEn: "Remove affected tissue; apply Bordeaux paste; spray Copper fungicide." ,
+        remedyMl: "ബാധിത തുടക്കം നീക്കം ചെയ്യുക; Bordeaux paste പ്രയോഗിക്കുക; Copper fungicide സ്പ്രേയ്."
       },
       {
-        nameEn: "Rhinoceros Beetle", nameMl: "കൊമ്പൻ ചെല്ലി", type: "Pest", severity: "Medium",
-        symptomsEn: "Holes in young leaves; characteristic V-shaped cuts.",
-        remedyEn: "Use pheromone traps; apply neem cake to leaf axils."
+        nameEn: "Root Wilt", nameMl: "കാറ്റുവാട്ടം", type: "Fungal", severity: "High",
+        symptomsEn: "Leaves droop; small nuts; low yield.", 
+        symptomsMl: "ഇലവികൾ കുഴപ്പങ്ങള്‍; ചെറിയ നട്ടുകൾ; കുറച്ച് യിൽഡ്.",
+        remedyEn: "Improve drainage; apply organic manure; balanced fertilizer." ,
+        remedyMl: "ഡ്രൈനേജ് മെച്ചപ്പെടുത്തുക; ജനറൽ മന്നർ പ്രയോഗിക്കുക; ബാലൻസ് ഫർട്ടിലൈസർ."
+      }
+    ]
+  },
+  {
+    id: "rubber",
+    nameEn: "Rubber",
+    nameMl: "റബ്ബർ",
+    scientific: "Hevea brasiliensis",
+    image: "https://i.pinimg.com/1200x/92/88/66/9288667a83dbb6bb632dfdca2449b50c.jpg",
+    details: { yield: "Latex production", care: "Field hygiene", focus: "Leaf health" },
+    threats: [
+      {
+        nameEn: "Abnormal Leaf Fall", nameMl: "ഇലകൊഴിച്ചിൽ", type: "Fungal", severity: "High",
+        symptomsEn: "Leaves fall early; poor latex yield.", 
+        symptomsMl: "ഇലവികൾ കുഴപ്പങ്ങള്‍; കുറച്ച് ലാറ്റെക്സ് യിൽഡ്.",
+        remedyEn: "Spray Bordeaux mixture; maintain field hygiene." ,
+        remedyMl: "Bordeaux mixture സ്പ്രേയ്; ഫീൽڈ് ഹയ്ജിന്‍ നിലനിർത്തുക."
+      },
+      {
+        nameEn: "Mealy Bug", nameMl: "മിലി ബഗ്", type: "Pest", severity: "Medium",
+        symptomsEn: "White cotton-like insects; leaf drying.", 
+        symptomsMl: "വെള്ളി കോട്ടൺ-ലൈക് ഇന്റെർന്റ്; ഇലവി ശുദ്ധി.",
+        remedyEn: "Neem oil spray; recommended insecticide if severe." ,
+        remedyMl: "Neem oil സ്പ്രേയ്; കാര്യമായ ഇൻസെക്ടിസൈഡ് ഉപയോഗിക്കുക നിലവിൽ."
+      }
+    ]
+  },
+  {
+    id: "arecanut",
+    nameEn: "Arecanut",
+    nameMl: "കമുകു",
+    scientific: "Areca catechu",
+    image: "https://i.pinimg.com/1200x/3b/65/97/3b659748247c450edc9afbce3834b7ad.jpg",
+    details: { drainage: "Critical", fertilizer: "Balanced needed" },
+    threats: [
+      {
+        nameEn: "Yellow Leaf Disease", nameMl: "മഞ്ഞളിപ്പ്", type: "Disease", severity: "High",
+        symptomsEn: "Yellowing leaves; reduced nut size.",  
+        symptomsMl: "മഞ്ഞാകുന്നത്; കുറച്ച് നട്ടുകൾ.",
+        remedyEn: "Balanced fertilizer; improve drainage." ,
+        remedyMl: "ബാലൻസ് ഫർട്ടിലൈസർ; ഡ്രൈനേജ് മെച്ചപ്പെടുത്തുക."
+      },
+      {
+        nameEn: "Fruit Rot (Koleroga)", nameMl: "മഹാളി", type: "Fungal", severity: "High",
+        symptomsEn: "Nuts turn black; premature nut fall.",  
+        symptomsMl: "നട്ടുകൾ കറുത്ത് മാറുന്നത്; പ്രാധാനമായ നട്ടുകൾ കുഴപ്പങ്ങള്‍.",
+        remedyEn: "Spray Bordeaux mixture before monsoon." ,
+        remedyMl: "മോൺസൂൺ മുൻപ് Bordeaux mixture സ്പ്രേയ്."
       }
     ]
   },
@@ -127,23 +187,36 @@ const CROP_DATABASE = [
     nameEn: "Coffee",
     nameMl: "കാപ്പി",
     scientific: "Coffea spp.",
-    image: "https://images.unsplash.com/photo-1559056191-4917a1120164?auto=format&fit=crop&q=80&w=800",
-    details: {
-      temp: "18°C – 28°C",
-      water: "1500–2500 mm rainfall",
-      care: "Needs shade trees",
-      harvest: "Nov – Feb"
-    },
+    image: "https://i.pinimg.com/1200x/ae/a9/75/aea9755df358dde9e866052d6b154420.jpg",
+    details: { care: "Shade trees needed", harvest: "Nov – Feb" },
     threats: [
       {
         nameEn: "Coffee Leaf Rust", nameMl: "തുരുമ്പ് രോഗം", type: "Fungal", severity: "High",
-        symptomsEn: "Orange/yellow powder under leaf; leaves fall early.",
-        remedyEn: "Spray Copper fungicide; maintain proper shade."
+        symptomsEn: "Orange/yellow powder under leaf; yellow spots on upper leaf; early leaf fall.",  
+        symptomsMl: "ഓറഞ്ച്/പച്ച പൌഡർ ഇലവികൾ താഴെ; മുകളിലെ ഇലവികൾ മഞ്ഞ; പ്രാധാനമായ ഇലവി കുഴപ്പങ്ങള്‍.",
+        remedyEn: "Spray Copper fungicide; maintain shade; balanced fertilizer." ,
+        remedyMl: "Copper fungicide സ്പ്രേയ്; ഷേഡ് നിലനിർത്തുക; ബാലൻസ് ഫർട്ടിലൈസർ."
       },
       {
-        nameEn: "Coffee Berry Borer", nameMl: "കാപ്പി കായതുരപ്പൻ", type: "Pest", severity: "High",
-        symptomsEn: "Small hole in coffee berry; powder-like material inside.",
-        remedyEn: "Collect fallen berries; install traps; timely harvest."
+        nameEn: "Berry Disease", nameMl: "കായ രോഗം", type: "Disease", severity: "High",
+        symptomsEn: "Black spots on green berries; berry shrinks and drops.",  
+        symptomsMl: "കറുത്ത് പാച്ചുകൾ വെള്ളി നട്ടുകൾ; നട്ടുകൾ കുഴപ്പങ്ങള്‍.",
+        remedyEn: "Spray fungicide before flowering; proper pruning; field sanitation." ,
+        remedyMl: "ഫ്ലോറിംഗ് മുൻപ് fungicide സ്പ്രേയ്; ശരിയായ പ്രൈനിംഗ്; ഫീൽڈ് സാനിറ്റേഷൻ."
+      },
+      {
+        nameEn: "Root Rot", nameMl: "വേരുചീയൽ", type: "Fungal", severity: "Medium",
+        symptomsEn: "Yellowing leaves; wilting; plant slowly dies.",  
+        symptomsMl: "മഞ്ഞാകുന്നത്; വില്ലിംഗ്; പ്ലാന്റ് നേരിച്ച് മരിക്കുന്നത്.",
+        remedyEn: "Improve drainage; remove affected plants; apply Trichoderma." ,
+        remedyMl: "ഡ്രൈനേജ് മെച്ചപ്പെടുത്തുക; ബാധിത പ്ലാന്റുകൾ നീക്കം ചെയ്യുക; Trichoderma പ്രയോഗിക്കുക."
+      },
+      {
+        nameEn: "Mealy Bugs", nameMl: "മിലി ബഗ്", type: "Pest", severity: "Medium",
+        symptomsEn: "White cotton-like insects; sooty black fungus on leaves.",  
+        symptomsMl: "വെള്ളി കോട്ടൺ-ലൈക് ഇന്റെർന്റ്; ഇലവി ശുദ്ധി.",
+        remedyEn: "Neem oil spray; release natural predators; insecticide if heavy." ,
+        remedyMl: "Neem oil സ്പ്രേയ്; നാറ്റൽ പ്രെഡേറ്റർമാരെ വിട്ടുവിടുക; ഇൻസെക്ടിസൈഡ് ഉപയോഗിക്കുക നിലവിൽ."
       }
     ]
   },
@@ -152,23 +225,22 @@ const CROP_DATABASE = [
     nameEn: "Tea",
     nameMl: "തേയില",
     scientific: "Camellia sinensis",
-    image: "https://images.unsplash.com/photo-1544739313-6fad02872377?auto=format&fit=crop&q=80&w=800",
-    details: {
-      temp: "18°C – 30°C",
-      water: "Acidic soil (pH 4.5–5.5)",
-      care: "Plucking every 7–15 days",
-      harvest: "Life: 40–60 years"
-    },
+    image: "https://i.pinimg.com/736x/31/82/33/318233368d7a103a4980ab0b98132af8.jpg",
+    details: { care: "Timely pruning", focus: "Rainy season protection" },
     threats: [
       {
         nameEn: "Blister Blight", nameMl: "ബ്ലിസ്റ്റർ ബ്ലൈറ്റ്", type: "Fungal", severity: "Medium",
-        symptomsEn: "Small blister spots on young leaves; leaves curl and fall.",
-        remedyEn: "Spray fungicide in rainy season; timely pruning."
+        symptomsEn: "Small blister-like spots on young leaves; leaves curl and fall.",  
+        symptomsMl: "ചെറിയ ബ്ലിസ്റ്റർ-ലൈക് സ്പോട്ടുകൾ തുറന്ന ഇലവികൾ; ഇലവികൾ കുഴപ്പങ്ങള്‍.",
+        remedyEn: "Spray fungicide during rainy season; proper spacing; pruning." ,
+        remedyMl: "മഴയായിരിക്കുന്ന സമയത്ത് fungicide സ്പ്രേയ്; ശരിയായ സ്പേസിംഗ്; പ്രൈനിംഗ്."
       },
       {
-        nameEn: "Tea Mosquito Bug", nameMl: "തേയില കൊതുക്", type: "Pest", severity: "High",
-        symptomsEn: "Brown patches on young leaves; leaf drying.",
-        remedyEn: "Neem spray; recommended insecticide if severe."
+        nameEn: "Root Rot", nameMl: "വേരുചീയൽ", type: "Fungal", severity: "Medium",
+        symptomsEn: "Yellowing leaves; wilting; plant death.",  
+        symptomsMl: "മഞ്ഞാകുന്നത്; വില്ലിംഗ്; പ്ലാന്റ് നേരിച്ച് മരിക്കുന്നത്.",
+        remedyEn: "Improve drainage; remove affected plants; apply Trichoderma." ,
+        remedyMl: "ഡ്രൈനേജ് മെച്ചപ്പെടുത്തുക; ബാധിത പ്ലാന്റുകൾ നീക്കം ചെയ്യുക; Trichoderma പ്രയോഗിക്കുക."
       }
     ]
   },
@@ -177,23 +249,22 @@ const CROP_DATABASE = [
     nameEn: "Cashew",
     nameMl: "കശുവണ്ടി",
     scientific: "Anacardium occidentale",
-    image: "https://images.unsplash.com/photo-1509010030550-9f60705a2f3b?auto=format&fit=crop&q=80&w=800",
-    details: {
-      temp: "20°C – 35°C",
-      water: "Tolerates dry conditions",
-      flowering: "Dec – Jan",
-      harvest: "Feb – Apr"
-    },
+    image: "https://i.pinimg.com/736x/b5/9c/b2/b59cb20d0535627da526198c73c2e736.jpg",
+    details: { harvest: "Feb – Apr", care: "Spray before flowering" },
     threats: [
       {
         nameEn: "Powdery Mildew", nameMl: "ചാരപ്പൂപ്പ്", type: "Fungal", severity: "Medium",
-        symptomsEn: "White powder on flowers; flower drying; poor nut setting.",
-        remedyEn: "Spray wettable sulphur before flowering."
+        symptomsEn: "White powder on flowers; flower drying; poor nut setting.",  
+        symptomsMl: "ഓറഞ്ച്/പച്ച പൌഡർ ഇലവികൾ താഴെ; മുകളിലെ ഇലവികൾ മഞ്ഞ; പ്രാധാനമായ ഇലവി കുഴപ്പങ്ങള്‍.",
+        remedyEn: "Spray wettable sulphur before flowering." ,
+        remedyMl: "ഫ്ലോറിംഗ് മുൻപ് wettable sulphur സ്പ്രേയ്." 
       },
       {
-        nameEn: "Stem & Root Borer", nameMl: "തണ്ട് തുരപ്പൻ", type: "Pest", severity: "High",
-        symptomsEn: "Gum oozing from stem; holes in trunk.",
-        remedyEn: "Remove grubs; apply insecticide in holes; clean orchard."
+        nameEn: "Dieback", nameMl: "ഡൈബാക്ക്", type: "Disease", severity: "Medium",
+        symptomsEn: "Branch tips dry; black patches on stem.",  
+        symptomsMl: "ശാഖകൾ ശുദ്ധി; സ്റ്റെം കറുത്ത് പാച്ചുകൾ.",
+        remedyEn: "Cut affected branches; apply Bordeaux paste." ,
+        remedyMl: "ബാധിത ശാഖകൾ കൈവരുക; Bordeaux paste പ്രയോഗിക്കുക."
       }
     ]
   },
@@ -202,23 +273,36 @@ const CROP_DATABASE = [
     nameEn: "Cocoa",
     nameMl: "കൊക്കോ",
     scientific: "Theobroma cacao",
-    image: "https://images.unsplash.com/photo-1544415594-555e09848574?auto=format&fit=crop&q=80&w=800",
-    details: {
-      temp: "20°C – 32°C",
-      water: "Partial shade; 1500–3000 mm",
-      spacing: "3m x 3m",
-      harvest: "Throughout year"
-    },
+    image: "https://i.pinimg.com/1200x/aa/18/5d/aa185dead70a3df5c6dd92e2408db78f.jpg",
+    details: { care: "Harvest pods timely", spacing: "Improve air circulation" },
     threats: [
       {
         nameEn: "Black Pod Disease", nameMl: "കായ ചീയൽ", type: "Fungal", severity: "High",
-        symptomsEn: "Brown patch on pod; pod becomes black and rotten.",
-        remedyEn: "Remove infected pods immediately; spray Copper fungicide."
+        symptomsEn: "Brown patch on pod; pod becomes black and rotten.", 
+        symptomsMl: "കറുത്ത് പാച്ചുകൾ ചീയൽ; ചീയൽ കറുത്ത് മാറുന്നത്.",
+        remedyEn: "Remove infected pods immediately; spray Copper fungicide." ,
+        remedyMl: "ബാധിത ചീയൽമാര്‍ തുടർന്ന് നീക്കം ചെയ്യുക; Copper fungicide സ്പ്രേയ്." 
+      },
+      {
+        nameEn: "Stem Canker", nameMl: "കാണ്ഡം വാട്ടം", type: "Disease", severity: "Medium",
+        symptomsEn: "Brown patches on stem; bark cracking.",  
+        symptomsMl: "കറുത്ത് പാച്ചുകൾ സ്റ്റെം; ബാർക്ക് ക്രാക്കിംഗ്.",
+        remedyEn: "Scrape affected area; apply Bordeaux paste." ,
+        remedyMl: "ബാധിത പേര്; Bordeaux paste പ്രയോഗിക്കുക."
+      },
+      {
+        nameEn: "Cocoa Pod Borer", nameMl: "കൊക്കോ കായതുരപ്പൻ", type: "Pest", severity: "High",
+        symptomsEn: "Small holes in pod; beans damaged inside.",  
+        symptomsMl: "ചെറിയ ദുര്ബലങ്ങൾ ചീയൽ; ഇന്ത്യൻ കായതുരപ്പൻ.",
+        remedyEn: "Remove affected pods; timely harvesting; insecticide if severe." ,
+        remedyMl: "ബാധിത ചീയൽമാര്‍ നീക്കം ചെയ്യുക; സമയപ്പെട്ട കളവ്; ഇൻസെക്ടിസൈഡ് ഉപയോഗിക്കുക നിലവിൽ."
       },
       {
         nameEn: "Mealy Bugs", nameMl: "മിലി ബഗ്", type: "Pest", severity: "Medium",
-        symptomsEn: "White cotton insects; sooty mould on leaves.",
-        remedyEn: "Neem oil spray; encourage natural enemies."
+        symptomsEn: "White cotton insects; sooty mould on leaves.",  
+        symptomsMl: "വെള്ളി കോട്ടൺ-ലൈക് ഇന്റെർന്റ്; ഇലവി ശുദ്ധി.",
+        remedyEn: "Neem oil spray; encourage natural enemies." ,
+        remedyMl: "Neem oil സ്പ്രേയ്; നാറ്റൽ പ്രെഡേറ്റർമാരെ വിട്ടുവിടുക."
       }
     ]
   }
@@ -272,7 +356,7 @@ export default function DiagnosticHub({ lang = 'en' }) {
         {/* Selected Crop Profile Card */}
         <div className="bg-white rounded-[2.5rem] shadow-2xl overflow-hidden mb-10 border border-stone-100">
           <div className="flex flex-col md:flex-row">
-            <div className="md:w-1/3 h-64 md:h-auto overflow-hidden">
+            <div className="md:w-1/3 h-64 md:h-64 overflow-hidden">
               <img src={selectedCrop.image} alt={selectedCrop.nameEn} className="w-full h-full object-cover transition-transform hover:scale-105" />
             </div>
             <div className="p-8 md:w-2/3">
@@ -329,7 +413,7 @@ export default function DiagnosticHub({ lang = 'en' }) {
                   </div>
                   <div>
                     <p className="text-[10px] font-black uppercase text-blue-600 mb-1">{isEn ? "Symptoms" : "ലക്ഷണങ്ങൾ"}</p>
-                    <p className="text-stone-700 font-bold leading-relaxed">{threat.symptomsEn}</p>
+                    <p className="text-stone-700 font-bold leading-relaxed">{isEn ? threat.symptomsEn : threat.symptomsMl}</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
@@ -338,7 +422,7 @@ export default function DiagnosticHub({ lang = 'en' }) {
                   </div>
                   <div>
                     <p className="text-[10px] font-black uppercase text-emerald-600 mb-1">{isEn ? "Management" : "പ്രതിവിധി"}</p>
-                    <p className="text-stone-700 font-bold leading-relaxed">{threat.remedyEn}</p>
+                    <p className="text-stone-700 font-bold leading-relaxed">{isEn ? threat.remedyEn : threat.remedyMl}</p>
                   </div>
                 </div>
               </div>
@@ -346,18 +430,19 @@ export default function DiagnosticHub({ lang = 'en' }) {
           ))}
         </div>
 
-        {/* General Management Tips for the Farmer */}
-        <div className="mt-12 p-8 bg-amber-50 rounded-[2.5rem] border border-amber-100">
-          <h4 className="text-lg font-black text-amber-900 flex items-center gap-2 mb-4">
-            <Info size={20}/> {isEn ? "Expert Sanitation Tips" : "പ്രധാന നിർദ്ദേശങ്ങൾ"}
-          </h4>
-          <ul className="grid md:grid-cols-2 gap-4 text-sm font-bold text-amber-800">
-            <li className="flex gap-2"><span>•</span> {isEn ? "Avoid excess nitrogen (Urea) fertilizer." : "അമിതമായ നൈട്രജൻ വളം ഒഴിവാക്കുക."} [cite: 87, 120]</li>
-            <li className="flex gap-2"><span>•</span> {isEn ? "Good drainage is very important." : "നീർവാർച്ച സൗകര്യം ഉറപ്പാക്കുക."} [cite: 90, 107]</li>
-            <li className="flex gap-2"><span>•</span> {isEn ? "Regular field inspection every 10-15 days." : "10-15 ദിവസത്തിലൊരിക്കൽ പരിശോധിക്കുക."} [cite: 120, 146]</li>
-            <li className="flex gap-2"><span>•</span> {isEn ? "Remove diseased plant parts immediately." : "രോഗം ബാധിച്ച ഭാഗങ്ങൾ ഉടൻ മാറ്റുക."} [cite: 62, 277]</li>
-          </ul>
-        </div>
+       {/* General Management Tips for the Farmer */}
+<div className="mt-12 p-8 bg-amber-50 rounded-[2.5rem] border border-amber-100">
+  <h4 className="text-lg font-black text-amber-900 flex items-center gap-2 mb-4">
+    <Info size={20}/> {isEn ? "Expert Sanitation Tips" : "പ്രധാന നിർദ്ദേശങ്ങൾ"}
+  </h4>
+  <ul className="grid md:grid-cols-2 gap-4 text-sm font-bold text-amber-800">
+    <li className="flex gap-2"><span>•</span> {isEn ? "Avoid excess nitrogen (Urea) fertilizer." : "അമിതമായ നൈട്രജൻ വളം ഒഴിവാക്കുക."} </li>
+    <li className="flex gap-2"><span>•</span> {isEn ? "Good drainage is very important." : "നീർവാർച്ച സൗകര്യം ഉറപ്പാക്കുക."} </li>
+    <li className="flex gap-2"><span>•</span> {isEn ? "Regular field inspection every 10-15 days." : "10-15 ദിവസത്തിലൊരിക്കൽ പരിശോധിക്കുക."} </li>
+    <li className="flex gap-2"><span>•</span> {isEn ? "Remove diseased plant parts immediately." : "രോഗം ബാധിച്ച ഭാഗങ്ങൾ ഉടൻ മാറ്റുക."} </li>
+    <li className="flex gap-2"><span>•</span> {isEn ? "Regular pruning increases yield and improves air circulation." : "യഥാസമയമുള്ള കൊമ്പുകോതൽ വിളവ് കൂട്ടുകയും വായുസഞ്ചാരം മെച്ചപ്പെടുത്തുകയും ചെയ്യുന്നു."} </li>
+  </ul>
+</div>
       </main>
     </div>
   );
