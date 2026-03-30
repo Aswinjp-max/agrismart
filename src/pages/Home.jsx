@@ -242,7 +242,7 @@ export default function Home({ lang }) {
     </h2>
         <div className="relative z-10">
           {/* Farmer Image from Reference */}
-          <div className="w-24 h-24 rounded-3xl border-4 border-white shadow-md overflow-hidden mb-6 transform -rotate-3">
+          <div className="w-auto h-auto rounded-3xl  shadow-md overflow-hidden mb-6">
             <img 
               src="https://res.cloudinary.com/dotzrdmve/image/upload/v1774894626/pappi_kfdjfu.jpg"
               alt="Farmer" 
