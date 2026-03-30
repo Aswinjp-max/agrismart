@@ -219,19 +219,79 @@ export default function Home({ lang }) {
         </div>
       </section>
 
-      {/* --- SERVICES SECTION --- */}
-      <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <ServiceCard icon={<ShoppingCart size={32}/>} title={isEn ? "Marketplace" : "വിപണി"} link="/marketplace" color="bg-emerald-50 text-emerald-600" />
-          <ServiceCard icon={<Users size={32}/>} title={isEn ? "Experts" : "വിദഗ്ധർ"} link="/experts" color="bg-blue-50 text-blue-600" />
-          <ServiceCard icon={<Wrench size={32}/>} title={isEn ? "Vendors" : "വെണ്ടർമാർ"} link="/vendors" color="bg-orange-50 text-orange-600" />
-          <ServiceCard icon={<ShieldCheck size={32}/>} title={isEn ? "Diseases" : "രോഗങ്ങൾ"} link="/disease" color="bg-red-50 text-red-600" />
-          <ServiceCard icon={<Landmark size={32}/>} title={isEn ? "Subsidies" : "സബ്സിഡി"} link="/subsidies" color="bg-purple-50 text-purple-600" />
-          <ServiceCard icon={<MessageSquare size={32}/>} title={isEn ? "Help Center" : "സഹായം"} link="/help" color="bg-stone-100 text-stone-700" />
-        </div>
-      </section>
+      {/* --- SERVICES & TESTIMONIAL SECTION --- */}
+<section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+    
+    {/* Left Side: Services Grid (8 columns) */}
+    <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <ServiceCard icon={<ShoppingCart size={32}/>} title={isEn ? "Marketplace" : "വിപണി"} link="/marketplace" color="bg-emerald-50 text-emerald-600" />
+      <ServiceCard icon={<Users size={32}/>} title={isEn ? "Experts" : "വിദഗ്ധർ"} link="/experts" color="bg-blue-50 text-blue-600" />
+      <ServiceCard icon={<Wrench size={32}/>} title={isEn ? "Vendors" : "വെണ്ടർമാർ"} link="/vendors" color="bg-orange-50 text-orange-600" />
+      <ServiceCard icon={<ShieldCheck size={32}/>} title={isEn ? "Diseases" : "രോഗങ്ങൾ"} link="/disease" color="bg-red-50 text-red-600" />
+      <ServiceCard icon={<Landmark size={32}/>} title={isEn ? "Subsidies" : "സബ്സിഡി"} link="/subsidies" color="bg-purple-50 text-purple-600" />
+      <ServiceCard icon={<MessageSquare size={32}/>} title={isEn ? "Help Center" : "സഹായം"} link="/help" color="bg-stone-100 text-stone-700" />
     </div>
+
+    {/* Right Side: Sticky Testimonial Box (4 columns) */}
+    <div className="lg:col-span-4 lg:sticky lg:top-10">
+      <div className="bg-[#E8F5E9] p-8 rounded-[3rem] shadow-xl border border-emerald-100 relative overflow-hidden">
+        
+        {/* Subtle Background Quote Icon */}
+        <div className="absolute top-6 left-6 opacity-10 pointer-events-none">
+          <MessageSquare size={60} className="text-emerald-900" />
+        </div>
+
+        <div className="relative z-10">
+          {/* Farmer Image from Reference */}
+          <div className="w-24 h-24 rounded-3xl border-4 border-white shadow-md overflow-hidden mb-6 transform -rotate-3">
+            <img 
+              src="https://res.cloudinary.com/dotzrdmve/image/upload/v1773427933/farmer_1_ajlq8h.jpg"
+              alt="Farmer" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          <p className="text-emerald-950 text-sm md:text-base leading-relaxed mb-6 font-medium italic">
+            {isEn 
+              ? "The agriconnect website made by these students is a welcome move for farmers like me.I have just begun to scratch the surface of what it offers and i'm eager to dive deeper to the other features"
+              : "ഈ വിദ്യാർത്ഥികൾ നിർമ്മിച്ച അഗ്രികണക്റ്റ് വെബ്സൈറ്റ് എന്ന പോലുള്ള കർഷകർക്ക് സ്വാഗതം ചെയ്യപ്പെടുന്ന ഒരു നീക്കമാണ്. ഇതിന്റെ വാഗ്ദാനത്തിന്റെ ഉപരിതലത്തിൽ ഞാൻ ഇപ്പോൾ മാത്രമേ തുടക്കം കുറിച്ചിട്ടുള്ളൂ, അതിന്റെ മറ്റ് സവിശേഷതകളിലേക്ക് കൂടുതൽ ആഴത്തിൽ ചാടാൻ ഞാൻ ആഗ്രഹിക്കുന്നു."}
+          </p>
+
+          <hr className="border-emerald-200 mb-6" />
+
+          <div className="flex justify-between items-end">
+            <div>
+              <h4 className="font-black text-emerald-800 text-lg">
+                
+                {isEn ? "Eldo O A" : "എൽഡോ ഒ എ"}
+              </h4>
+              <p className="text-emerald-600 font-bold text-[10px] uppercase tracking-wider">
+                {isEn ? "Farmer and president of padshekara samidhi (6th ward of Muttil Gramapanchayath )" : "മുട്ടിൽ ഗ്രാമപഞ്ചായത്തിന്റെ 6-ാം വാർഡിലെ പടശേഖര സമിതി പ്രസിഡന്റും കർഷകനും"}
+              </p>
+            </div>
+            
+            <div className="flex text-yellow-500 gap-0.5 text-xs">
+              {[...Array(5)].map((_, i) => (
+                <span key={i}>★</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {/* Small Badge under the box for extra polish */}
+      <div className="mt-4 text-center">
+         <span className="text-[10px] font-black text-stone-400 uppercase tracking-[0.2em]">Verified Farmer Story</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+    </div>
+    
   );
+  
 }
 
 function ServiceCard({ icon, title, link, color }) {
