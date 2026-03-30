@@ -234,16 +234,17 @@ export default function Home({ lang }) {
     </div>
 
     {/* Right Side: Sticky Testimonial Box (4 columns) */}
-    <div className="lg:col-span-4 lg:sticky lg:top-10">
-      <div className="bg-[#E8F5E9] p-8 rounded-[3rem] shadow-xl border border-emerald-100 relative overflow-hidden">
-        
-        
-
+   <div className="lg:col-span-4 lg:sticky lg:top-10 h-fit"> {/* Added h-fit to ensure it doesn't stretch unnecessarily */}
+  <div className="bg-[#E8F5E9] p-6 sm:p-8 rounded-[2.5rem] md:rounded-[3rem] shadow-xl border border-emerald-100 relative overflow-hidden transition-all duration-300">
+    
+    <h2 className="text-2xl md:text-3xl font-black text-emerald-800 mb-8 text-center leading-tight">
+{isEn ? "Farmer Testimonials" : "കർഷകരുടെ സാക്ഷ്യപത്രങ്ങൾ"}
+    </h2>
         <div className="relative z-10">
           {/* Farmer Image from Reference */}
           <div className="w-24 h-24 rounded-3xl border-4 border-white shadow-md overflow-hidden mb-6 transform -rotate-3">
             <img 
-              src="https://res.cloudinary.com/dotzrdmve/image/upload/v1773427933/farmer_1_ajlq8h.jpg"
+              src="https://res.cloudinary.com/dotzrdmve/image/upload/v1774894626/pappi_kfdjfu.jpg"
               alt="Farmer" 
               className="w-full h-full object-cover"
             />
