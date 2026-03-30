@@ -16,6 +16,7 @@ import RegisterExpert from './pages/RegisterExpert';
 import DiseaseGuide from './pages/DiseaseGuide';
 import Subsidies from './pages/Subsidies';
 import Help from './pages/Help';
+import Footer from './components/Footer';
 import Vendors from './pages/Vendors';
 import RegisterVendor from './pages/RegisterVendor';
 function App() {
@@ -77,7 +78,7 @@ function App() {
           <Route path="/subsidies" element={<Subsidies user={user} lang={lang} />} />
           <Route path="/vendors" element={<Vendors user={user} lang={lang} />} />
           <Route path="/help" element={<Help user={user} lang={lang} />} />
-
+          
           {/* Protected Routes */}
           <Route 
             path="/dashboard" 
@@ -99,6 +100,7 @@ function App() {
 
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
+        <Footer lang={lang} />
       </div>
     </Router>
   );

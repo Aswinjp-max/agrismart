@@ -267,7 +267,11 @@ export default function Home({ lang }) {
               <p className="text-emerald-600 font-bold text-[10px] uppercase tracking-wider">
                 {isEn ? "Farmer and president of padshekara samidhi (6th ward of Muttil Gramapanchayath )" : "മുട്ടിൽ ഗ്രാമപഞ്ചായത്തിന്റെ 6-ാം വാർഡിലെ പടശേഖര സമിതി പ്രസിഡന്റും കർഷകനും"}
               </p>
+               <h2 className="text-emerald-700 text-[10px] font-bold uppercase tracking-wider">
+                {isEn ? "Won state award for Best Fish Farmer of year 2024-25" : "2024-25 വർഷത്തെ മികച്ച മത്സ്യകർഷകനുള്ള സംസ്ഥാന അവാർഡ് ജേതാവ്"}
+              </h2>
             </div>
+            
             
             <div className="flex text-yellow-500 gap-0.5 text-xs">
               {[...Array(5)].map((_, i) => (
