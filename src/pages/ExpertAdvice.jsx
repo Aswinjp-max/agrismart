@@ -88,7 +88,7 @@ export default function ExpertAdvice({ user, lang }) {
 
       {/* --- HEADER --- */}
       <section className="bg-emerald-950 pt-20 pb-32 px-6 text-center text-white">
-        <h1 className="text-4xl font-black mb-6">{isEn ? 'Agricultural' : 'കാർഷിക'} <span className="text-emerald-400">Experts</span></h1>
+        <h1 className="text-6xl font-black mb-6">{isEn ? 'Agricultural' : 'കാർഷിക'} <span className="text-emerald-400">Experts</span></h1>
         <div className="max-w-xl mx-auto relative">
           <Search className="absolute left-5 top-1/2 -translate-y-1/2 text-emerald-800" />
           <input onChange={(e) => setSearch(e.target.value)} placeholder="Search specialty..." className="w-full p-6 pl-14 rounded-full text-stone-900 font-bold" />

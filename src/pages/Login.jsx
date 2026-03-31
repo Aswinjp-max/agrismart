@@ -149,20 +149,7 @@ export default function Login({ setUser, lang }) {
           </form>
 
           {/* Social Login */}
-          <div className="mt-8">
-            <div className="relative flex items-center justify-center mb-6">
-              <div className="border-t border-stone-100 w-full"></div>
-              <span className="bg-white px-4 text-[10px] font-black text-stone-300 uppercase absolute uppercase tracking-widest italic">Or continue with</span>
-            </div>
-            
-            <button 
-              onClick={handleGoogleLogin}
-              className="w-full bg-white border border-stone-200 py-4 rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-stone-50 transition"
-            >
-              <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/pwa/google.svg" className="w-5" alt="Google" />
-              Google
-            </button>
-          </div>
+          
 
           {/* Toggle */}
           <p className="text-center mt-8 text-sm font-bold text-stone-500">
