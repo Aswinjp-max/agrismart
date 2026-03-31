@@ -322,7 +322,7 @@ export default function DiagnosticHub({ lang = 'en' }) {
     <div className="min-h-screen bg-stone-50 pb-20 font-sans">
       {/* Header with Search */}
       <header className="bg-emerald-950 pt-16 pb-24 px-6 text-white text-center">
-        <h1 className="text-4xl font-black mb-4">
+        <h1 className="text-4xl md:text-6xl font-black mb-4">
           {isEn ? "Diagnostic" : "രോഗനിർണ്ണയ"} <span className="text-emerald-400">Hub</span>
         </h1>
         

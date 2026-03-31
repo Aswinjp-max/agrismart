@@ -11,21 +11,23 @@ export default function Subsidies({ lang }) {
   const schemes = [
     {
       id: 1,
-      title: isEn ? "Kuttanad Package 2.0" : "കുട്ടനാട് പാക്കേജ് 2.0",
-      dept: isEn ? "Dept. of Agriculture" : "കൃഷി വകുപ്പ്",
+      title: isEn ? "Kuttanad Package" : "കുട്ടനാട് പാക്കേജ് ",
+      dept: isEn ? "Dept. of Irrigation" : "ജലസേചന വകുപ്പ്",
       amount: "₹2,50,000",
       category: "Infrastructure",
       deadline: "2026-03-15",
-      status: "Open"
+      status: "Open",
+      url: "https://irrigation.kerala.gov.in/kuttanad-package"
     },
     {
       id: 2,
-      title: isEn ? "Organic Manure Subsidy" : "ജൈവവള സബ്സിഡി",
-      dept: isEn ? "Krishi Bhavan" : "കൃഷി ഭവൻ",
+      title: isEn ? "Subhiksha Keralam Scheme" : "സബ്ഹിക്ഷ കേരളം സ്കീം",
+      dept: isEn ? "Department of Agriculture & Farmers Welfare" : "കൃഷി വകുപ്പ്",
       amount: "75% Subsidy",
       category: "Organic",
-      deadline: "2026-04-01",
-      status: "Open"
+      deadline: "2026-05-01",
+      status: "Open",
+      url: "https://www.aims.kerala.gov.in/"
     },
     {
       id: 3,
@@ -34,7 +36,8 @@ export default function Subsidies({ lang }) {
       amount: "₹6,000/year",
       category: "Direct Benefit",
       deadline: "Ongoing",
-      status: "Active"
+      status: "Open",
+      url: "https://pmkisan.co.in/"
     }
   ];
 
@@ -103,9 +106,12 @@ export default function Subsidies({ lang }) {
                     <Clock size={14} className="text-orange-500"/> {scheme.deadline}
                   </div>
                 </div>
-                <button className="bg-stone-900 text-white px-8 py-4 rounded-2xl font-black flex items-center gap-2 hover:bg-emerald-600 transition-all shadow-lg">
-                  {isEn ? "Apply Now" : "അപേക്ഷിക്കുക"} <ChevronRight size={18}/>
-                </button>
+                <button 
+                 onClick={() => window.open(scheme.url, '_blank')} 
+                  className="bg-stone-900 text-white px-8 py-4 rounded-2xl font-black flex items-center gap-2 hover:bg-emerald-600 transition-all shadow-lg">
+                   {isEn ? "Apply Now" : "അപേക്ഷിക്കുക"} 
+                   <ExternalLink size={16} className="ml-1 opacity-70" />
+                  </button>
               </div>
             </div>
           ))}

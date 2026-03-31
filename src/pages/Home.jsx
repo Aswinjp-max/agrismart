@@ -199,7 +199,7 @@ export default function Home({ lang }) {
   <div className="max-w-6xl mx-auto"> 
     <div className="relative w-full aspect-video rounded-[2rem] lg:rounded-[4rem] overflow-hidden shadow-2xl border border-stone-200">
       <video 
-        src="https://res.cloudinary.com/dotzrdmve/video/upload/v1773427933/Screen_Recording_2025-10-25_161030_ijw6iz.mp4" 
+        src="https://collection.cloudinary.com/dotzrdmve/8e2e3134a8df7b8f60faaa910ecc82b6" 
         autoPlay 
         muted 
         loop 
@@ -208,11 +208,7 @@ export default function Home({ lang }) {
       />
       
       {/* Optional: Subtle branding overlay since cards are gone */}
-      <div className="absolute bottom-6 left-6 lg:bottom-1 lg:left-10 bg-white/20 backdrop-blur-md px-6 py-2 rounded-full">
-         <p className="text-white font-bold text-sm lg:text-base uppercase tracking-widest">
-           {isEn ? "Place your ads now" : "ഇപ്പോൾ നിങ്ങളുടെ പരസ്യങ്ങൾ ഇടുക"}
-         </p>
-      </div>
+      
     </div>
   </div>
 </div>
