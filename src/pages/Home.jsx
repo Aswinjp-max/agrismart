@@ -208,6 +208,9 @@ export default function Home({ lang }) {
       />
       
       {/* Optional: Subtle branding overlay since cards are gone */}
+      <div className="absolute bottom-4 left-6 bg-emerald-600 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+        Place your ad here
+      </div>
       
     </div>
   </div>
